@@ -2,12 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Specialized;
-
-
-
-
-//using System.Diagnostics;
-//using System.Security.Cryptography;
 using UnityEngine;
 
 public class ShipMove : MonoBehaviour
@@ -76,7 +70,7 @@ public class ShipMove : MonoBehaviour
 
         curIndex = 0;
 
-        int total = 0;
+        
         points = new List<GameObject>();
         var estrelas = GameObject.FindGameObjectsWithTag("Star");
 
@@ -88,13 +82,9 @@ public class ShipMove : MonoBehaviour
 
         Vector3 currentStarPosition =transform.position;
 
-        //Debug.Log(transform.rotation.ToString());
-
-        //transform.rotation = Quaternion.Euler(0, 0, 90);
-
-        //Debug.Log(transform.rotation.ToString());
+       
         Point pInicial = new Point(transform.position.x, transform.position.y, transform.position.z);
-        Point pSecond = new Point(currentStarPosition.x, currentStarPosition.y, currentStarPosition.z);
+        //Point pSecond = new Point(currentStarPosition.x, currentStarPosition.y, currentStarPosition.z);
         Point ti = CalculaTangentePartida(pInicial);
         Point te;
 
@@ -105,7 +95,7 @@ public class ShipMove : MonoBehaviour
             var proximaEstrela = estrelas[i].transform.position;
             GameObject proximoPontoEstrela = Instantiate(interpoint, new Vector3(proximaEstrela.x, proximaEstrela.y, proximaEstrela.z), Quaternion.identity);
             
-            int j = 0;
+           
 
 
             var pontoAtual = points[points.Count - 1];
@@ -122,7 +112,7 @@ public class ShipMove : MonoBehaviour
             te = CalculaTangenteChegada(pi, pe, ti);
             ti = te;
 
-            float curT = 0.0f;
+            
             Point nextPoint;
             GameObject gnext;
             speed = 0;
@@ -138,7 +128,7 @@ public class ShipMove : MonoBehaviour
 
                     points.Add(gnext);
 
-                    j++;
+                    
                     deltaSpeed+=delta;
                     speed=deltaSpeed;
 
@@ -157,18 +147,13 @@ public class ShipMove : MonoBehaviour
 
                         points.Add(gnext);
 
-                        j++;
+                        
 
                         deltaSpeed+=delta;
                         speed = deltaSpeed * deltaSpeed * deltaSpeed;
 
 
-                        //curT += speed;
-
-                        //if (curT > 1)
-                        //{
-                          //  curT = 1;
-                        //}
+                        
 
                     }
                     
@@ -186,12 +171,12 @@ public class ShipMove : MonoBehaviour
 
                         points.Add(gnext);
 
-                        j++;
+                        
 
                         deltaSpeed+=delta;
                         speed = 1 - Mathf.Pow(1-deltaSpeed,3);
 
-                        //curT += speed;
+                        
 
                     }
                     
@@ -203,14 +188,16 @@ public class ShipMove : MonoBehaviour
         }
         }
 
-        Vector3 direction = transform.position- points[curIndex + 1].transform.position;
+        Vector3 direction = transform.position - points[curIndex].transform.position;
 
 
         // Calcular o ângulo de rotação
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg-90;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90;
 
         // Aplicar a rotação
         transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+
+        
 
         Debug.Log(transform.rotation.ToString());
     }
