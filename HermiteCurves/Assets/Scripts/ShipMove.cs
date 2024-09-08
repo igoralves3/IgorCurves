@@ -47,12 +47,12 @@ public class ShipMove : MonoBehaviour
     }
 
     public EasingType currentEasing;
-    public float defaultSpeed = 0.01f;
-    public float speed = 0.01f;
-    public float minSpeed = 0.0f;
-    public float maxSpeed = 1f;
-    public float deltaSpeed = 0.01f;
-    public float delta = 0.01f;
+    private float defaultSpeed = 0.01f;
+    private float speed = 0.01f;
+    private float minSpeed = 0.0f;
+    private float maxSpeed = 1f;
+    private float deltaSpeed = 0.01f;
+    private float delta = 0.01f;
     List<GameObject> points;
 
     public GameObject interpoint;
