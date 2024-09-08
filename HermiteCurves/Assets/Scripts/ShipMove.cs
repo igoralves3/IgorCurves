@@ -33,7 +33,7 @@ public class ShipMove : MonoBehaviour
         }
 
         public static Point operator -(Point a, Point b) => new Point(a.x - b.x, a.y - b.y, a.z - b.z);
-        public static Point operator *(float scalar, Point p) => new Point(scalar * p.x, scalar * p.y, scalar - p.z);
+        public static Point operator *(float scalar, Point p) => new Point(scalar * p.x, scalar * p.y, scalar * p.z);
         public static Point operator +(Point a, Point b) => new Point(a.x + b.x, a.y + b.y, a.z + b.z);
 
     }
