@@ -20,7 +20,8 @@ Para usar o projeto "Hermite Curves", siga estas etapas:
   - "Easy in": Acelera até um dos pontos amarelos depois começa velocidade mínima do zero
   - "Easy out": Desacelera até um dos pontos amarelos depois começa velocidade máxima do zero.
 - Não alterar os outros parâmetros
-- Executar a cena para ver o caminho percorrido pela nave triângulo. 
+- Executar a cena para ver o caminho percorrido pela nave triângulo.
+- Verificar a build no seguinte link: https://drive.google.com/file/d/1x6yM2p227zR2EjQNH1r7GXYiHNNvaSQz/view?usp=drive_link
 
 
 
